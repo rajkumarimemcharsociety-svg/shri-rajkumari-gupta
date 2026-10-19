@@ -1,0 +1,215 @@
+
+.join-society-page {
+  min-height: 100vh;
+  padding: 28px 22px 70px;
+  background: #f3f7fb;
+  color: #193b35;
+}
+
+.join-society-top {
+  max-width: 1000px;
+  margin: 0 auto 28px;
+}
+
+.join-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #194d82;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.join-back-link:hover {
+  text-decoration: underline;
+}
+
+.join-society-hero {
+  max-width: 720px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.join-society-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 18px;
+  border-radius: 18px;
+  background: #1e684d;
+  color: #fff;
+}
+
+.join-society-hero .eyebrow {
+  color: #246b4d;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+}
+
+.join-society-hero h1 {
+  margin: 12px 0;
+  color: #173958;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.join-society-hero > p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: #536579;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.join-form-card {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: clamp(22px, 4vw, 42px);
+  border: 1px solid #e0e8ef;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 16px 45px rgba(20, 51, 80, 0.08);
+}
+
+.join-form-heading {
+  margin-bottom: 28px;
+}
+
+.join-form-heading h2,
+.join-success h2 {
+  margin: 0 0 10px;
+  color: #173958;
+  font-size: 1.7rem;
+}
+
+.join-form-heading p,
+.join-success p {
+  color: #627184;
+  line-height: 1.7;
+}
+
+.join-society-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.join-fields-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.join-society-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #243f53;
+  font-size: 0.93rem;
+  font-weight: 650;
+}
+
+.join-society-form label > span {
+  color: #c53c3c;
+}
+
+.join-society-form input,
+.join-society-form select,
+.join-society-form textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid #d6e0e8;
+  border-radius: 10px;
+  background: #fbfdff;
+  color: #173958;
+  font: inherit;
+  font-weight: 400;
+}
+
+.join-society-form textarea {
+  min-height: 125px;
+  resize: vertical;
+}
+
+.join-society-form input:focus,
+.join-society-form select:focus,
+.join-society-form textarea:focus {
+  outline: 3px solid rgba(36, 102, 164, 0.15);
+  border-color: #2466a4;
+}
+
+.join-full-field {
+  width: 100%;
+}
+
+.join-privacy-note {
+  margin: 0;
+  color: #66778a;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.join-submit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  gap: 10px;
+  min-height: 49px;
+  padding: 13px 22px;
+  border: 0;
+  border-radius: 999px;
+  background: #194d82;
+  color: #fff;
+  font: inherit;
+  font-weight: 750;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.join-submit-button:hover {
+  background: #123b66;
+  transform: translateY(-2px);
+}
+
+.join-success {
+  padding: 28px 10px;
+  text-align: center;
+}
+
+.join-success > svg {
+  color: #21815a;
+}
+
+.join-success .join-submit-button {
+  margin-top: 12px;
+}
+
+@media (max-width: 620px) {
+  .join-society-page {
+    padding: 22px 14px 45px;
+  }
+
+  .join-fields-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .join-submit-button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .join-submit-button {
+    transition: none;
+  }
+
+  .join-submit-button:hover {
+    transform: none;
+  }
+}

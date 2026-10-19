@@ -1,0 +1,234 @@
+
+.enquiry-panel {
+  width: min(100%, 820px);
+  margin: 32px auto 20px;
+  padding: clamp(22px, 4vw, 38px);
+  color: #203b59;
+  background: #fff;
+  border: 1px solid #dce6f0;
+  border-radius: 18px;
+  text-align: left;
+  box-shadow: 0 18px 50px rgba(11, 42, 75, 0.12);
+}
+
+.enquiry-heading {
+  margin-bottom: 25px;
+}
+
+.enquiry-eyebrow {
+  color: #2563a6;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+}
+
+.enquiry-heading h3 {
+  margin: 8px 0;
+  color: #153a61;
+  font-size: clamp(25px, 4vw, 32px);
+  line-height: 1.25;
+}
+
+.enquiry-heading p {
+  margin: 0;
+  color: #60758a;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.enquiry-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 19px;
+}
+
+.enquiry-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #203b59;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.enquiry-form label > span {
+  display: inline;
+  color: #b42318;
+}
+
+.enquiry-form input,
+.enquiry-form select,
+.enquiry-form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid #cbd8e6;
+  border-radius: 9px;
+  outline: none;
+  background: #fafdff;
+  color: #203b59;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 400;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.enquiry-form input,
+.enquiry-form select {
+  min-height: 48px;
+}
+
+.enquiry-form textarea {
+  min-height: 140px;
+  resize: vertical;
+  line-height: 1.7;
+}
+
+.enquiry-form input:focus,
+.enquiry-form select:focus,
+.enquiry-form textarea:focus {
+  border-color: #2563a6;
+  box-shadow: 0 0 0 3px rgba(37, 99, 166, 0.12);
+}
+
+.enquiry-form input::placeholder,
+.enquiry-form textarea::placeholder {
+  color: #8496a9;
+}
+
+.enquiry-message-field {
+  grid-column: 1 / -1;
+}
+
+.enquiry-message-field small {
+  align-self: flex-end;
+  color: #60758a;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.enquiry-honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.enquiry-submit {
+  min-height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 13px 24px;
+  border: 0;
+  border-radius: 9px;
+  background: #1d5487;
+  color: #fff;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.enquiry-submit:hover:not(:disabled) {
+  background: #153a61;
+  transform: translateY(-2px);
+}
+
+.enquiry-submit:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.enquiry-submit:focus-visible {
+  outline: 3px solid #7db5ee;
+  outline-offset: 3px;
+}
+
+.enquiry-spinner {
+  animation: enquiry-spin 1s linear infinite;
+}
+
+@keyframes enquiry-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.enquiry-privacy {
+  margin: 14px 0 0;
+  color: #60758a;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.enquiry-result {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.enquiry-result p {
+  margin: 5px 0;
+}
+
+.enquiry-result small {
+  display: block;
+  margin-top: 6px;
+  overflow-wrap: anywhere;
+}
+
+.enquiry-result-success {
+  border: 1px solid #a7d9bd;
+  background: #effaf3;
+  color: #175c36;
+}
+
+.enquiry-result-error {
+  border: 1px solid #f1b8b8;
+  background: #fff3f2;
+  color: #9f2525;
+}
+
+@media (max-width: 600px) {
+  .enquiry-panel {
+    margin-top: 24px;
+    padding: 21px 16px;
+    border-radius: 13px;
+  }
+
+  .enquiry-fields {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .enquiry-message-field {
+    grid-column: auto;
+  }
+
+  .enquiry-submit {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .enquiry-spinner {
+    animation: none;
+  }
+
+  .enquiry-form input,
+  .enquiry-form select,
+  .enquiry-form textarea,
+  .enquiry-submit {
+    transition: none;
+  }
+}

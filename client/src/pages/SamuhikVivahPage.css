@@ -1,0 +1,661 @@
+
+.samuhik-page {
+  min-height: 100vh;
+  color: #18334f;
+  background: #f5f8fc;
+  font-family: inherit;
+}
+
+.samuhik-page * {
+  box-sizing: border-box;
+}
+
+.samuhik-topbar {
+  min-height: 82px;
+  padding: 16px clamp(20px, 6vw, 88px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #fff;
+  border-bottom: 1px solid #e4ebf3;
+}
+
+.samuhik-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #153f70;
+  text-decoration: none;
+}
+
+.samuhik-brand-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: #1764a4;
+  border-radius: 13px;
+}
+
+.samuhik-brand strong,
+.samuhik-brand small {
+  display: block;
+}
+
+.samuhik-brand strong {
+  font-size: 14px;
+  letter-spacing: 0.035em;
+}
+
+.samuhik-brand small {
+  margin-top: 4px;
+  color: #6a7e92;
+  font-size: 12px;
+}
+
+.samuhik-home-link,
+.samuhik-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #185b98;
+  background: transparent;
+  border: 0;
+  font: inherit;
+  font-weight: 650;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.samuhik-hero {
+  padding: clamp(54px, 8vw, 100px) 22px;
+  text-align: center;
+  color: #fff;
+  background:
+    radial-gradient(ellipse at 85% 10%, #327bb5 0, transparent 36%),
+    linear-gradient(125deg, #10375f, #1769a8);
+}
+
+.samuhik-eyebrow {
+  display: inline-block;
+  color: #347ab5;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.samuhik-hero .samuhik-eyebrow {
+  color: #d3eaff;
+}
+
+.samuhik-hero h1 {
+  margin: 15px 0;
+  font-size: clamp(32px, 5vw, 54px);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+.samuhik-hero > p {
+  max-width: 660px;
+  margin: 0 auto;
+  color: #e0edfa;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.samuhik-hero-meta {
+  margin-top: 27px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+
+.samuhik-hero-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 13px;
+}
+
+.samuhik-content {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 58px 0 78px;
+}
+
+.samuhik-back-button {
+  margin-bottom: 28px;
+  padding: 0;
+}
+
+.samuhik-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 28px;
+}
+
+.samuhik-section-heading h2 {
+  margin: 8px 0;
+  color: #163b61;
+  font-size: clamp(27px, 4vw, 36px);
+  letter-spacing: -0.025em;
+}
+
+.samuhik-section-heading p {
+  margin: 0;
+  color: #718196;
+  line-height: 1.7;
+}
+
+.samuhik-event-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.samuhik-event-card {
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  text-align: left;
+  color: inherit;
+  background: #fff;
+  border: 1px solid #e4ebf3;
+  border-radius: 17px;
+  box-shadow: 0 7px 24px rgb(20 56 91 / 5%);
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.samuhik-event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 32px rgb(20 56 91 / 12%);
+}
+
+.samuhik-card-image {
+  position: relative;
+  height: 225px;
+  overflow: hidden;
+  background: #e4edf6;
+}
+
+.samuhik-card-image img,
+.samuhik-photo-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.samuhik-event-card:hover .samuhik-card-image img {
+  transform: scale(1.035);
+}
+
+.samuhik-card-image img {
+  transition: transform 250ms ease;
+}
+
+.samuhik-event-number {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 7px 11px;
+  color: #174d7e;
+  background: rgb(255 255 255 / 94%);
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.samuhik-empty-cover {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #6a829b;
+  background: linear-gradient(140deg, #e8f1fa, #dbe8f5);
+  font-size: 13px;
+}
+
+.samuhik-card-body {
+  padding: 20px;
+}
+
+.samuhik-card-body h3 {
+  margin: 0 0 12px;
+  color: #173e65;
+  font-size: 19px;
+}
+
+.samuhik-event-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: #74869a;
+  font-size: 13px;
+}
+
+.samuhik-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 21px;
+  padding-top: 15px;
+  border-top: 1px solid #edf1f6;
+  color: #77889a;
+  font-size: 12px;
+}
+
+.samuhik-view-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #1767a8;
+  font-weight: 750;
+}
+
+.samuhik-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.samuhik-photo-card {
+  position: relative;
+  height: 220px;
+  padding: 0;
+  overflow: hidden;
+  background: #e4edf6;
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.samuhik-photo-card img {
+  transition: transform 220ms ease;
+}
+
+.samuhik-photo-card:hover img {
+  transform: scale(1.05);
+}
+
+.samuhik-photo-overlay {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 22px 10px 13px;
+  color: #fff;
+  background: linear-gradient(transparent, rgb(6 26 47 / 75%));
+  opacity: 0;
+  transition: opacity 180ms ease;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.samuhik-photo-card:hover .samuhik-photo-overlay,
+.samuhik-photo-card:focus-visible .samuhik-photo-overlay {
+  opacity: 1;
+}
+
+.samuhik-no-photos {
+  padding: 55px 20px;
+  text-align: center;
+  color: #6f8297;
+  background: #fff;
+  border: 1px dashed #c7d8e9;
+  border-radius: 16px;
+}
+
+.samuhik-no-photos h3 {
+  margin: 16px 0 8px;
+  color: #183f65;
+}
+
+.samuhik-no-photos p {
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.samuhik-footer {
+  padding: 28px 20px;
+  text-align: center;
+  background: #fff;
+  border-top: 1px solid #e4ebf3;
+}
+
+.samuhik-footer p {
+  margin: 0 0 7px;
+  color: #214c76;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.samuhik-footer span {
+  color: #7a8999;
+  font-size: 12px;
+}
+
+.samuhik-lightbox {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 65px 70px;
+  background: rgb(5 16 29 / 94%);
+}
+
+.samuhik-lightbox-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.samuhik-lightbox-close,
+.samuhik-lightbox-arrow {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: rgb(255 255 255 / 13%);
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.samuhik-lightbox-close {
+  top: 20px;
+  right: 22px;
+  width: 45px;
+  height: 45px;
+}
+
+.samuhik-lightbox-arrow {
+  top: 50%;
+  width: 46px;
+  height: 46px;
+  transform: translateY(-50%);
+}
+
+.samuhik-lightbox-prev {
+  left: 16px;
+}
+
+.samuhik-lightbox-next {
+  right: 16px;
+}
+
+.samuhik-lightbox-count {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .samuhik-event-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .samuhik-photo-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .samuhik-card-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .samuhik-topbar {
+    padding: 14px 16px;
+  }
+
+  .samuhik-brand strong {
+    font-size: 11px;
+  }
+
+  .samuhik-brand small {
+    font-size: 10px;
+  }
+
+  .samuhik-brand-icon {
+    width: 39px;
+    height: 39px;
+  }
+
+  .samuhik-home-link {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .samuhik-hero {
+    padding: 54px 20px;
+  }
+
+  .samuhik-hero > p {
+    font-size: 14px;
+  }
+
+  .samuhik-content {
+    width: calc(100% - 28px);
+    padding: 40px 0 54px;
+  }
+
+  .samuhik-event-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .samuhik-card-image {
+    height: 225px;
+  }
+
+  .samuhik-photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .samuhik-photo-card {
+    height: 155px;
+  }
+
+  .samuhik-photo-overlay {
+    opacity: 1;
+  }
+
+  .samuhik-lightbox {
+    padding: 60px 12px;
+  }
+
+  .samuhik-lightbox-prev {
+    left: 6px;
+  }
+
+  .samuhik-lightbox-next {
+    right: 6px;
+  }
+}
+
+
+
+/* ==========================================
+   SAMUHIK VIVAH — MATCH SCHOLARSHIP THEME
+   Add this block at the END of the CSS file.
+   ========================================== */
+
+.samuhik-page {
+  color: #153b2d;
+  background: #faf9f3;
+}
+
+/* Header */
+.samuhik-topbar {
+  background: #ffdf54;
+  border-bottom-color: #e8dca0;
+}
+
+.samuhik-brand {
+  color: #20533d;
+}
+
+.samuhik-brand-icon {
+  color: #ffdf54;
+  background: #20533d;
+}
+
+.samuhik-brand small {
+  color: #526b58;
+}
+
+.samuhik-home-link,
+.samuhik-back-button {
+  color: #20533d;
+}
+
+.samuhik-home-link:hover,
+.samuhik-back-button:hover {
+  color: #153b2d;
+}
+
+/* Hero */
+.samuhik-hero {
+  background:
+    radial-gradient(
+      ellipse at 85% 10%,
+      rgba(255, 223, 84, 0.15) 0,
+      transparent 36%
+    ),
+    linear-gradient(125deg, #153b2d, #20533d 60%, #45694e);
+}
+
+.samuhik-hero .samuhik-eyebrow {
+  color: #ffdf54;
+}
+
+.samuhik-hero > p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* Section headings */
+.samuhik-eyebrow {
+  color: #6a9071;
+}
+
+.samuhik-section-heading h2 {
+  color: #20533d;
+}
+
+.samuhik-section-heading p {
+  color: #718076;
+}
+
+/* Event cards */
+.samuhik-event-card {
+  background: #fffefa;
+  border-color: #e4e5d9;
+  box-shadow: 0 7px 24px rgba(23, 59, 44, 0.05);
+}
+
+.samuhik-event-card:hover {
+  box-shadow: 0 15px 32px rgba(23, 59, 44, 0.12);
+}
+
+.samuhik-card-image,
+.samuhik-photo-card {
+  background: #e5eadf;
+}
+
+.samuhik-event-number {
+  color: #20533d;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.samuhik-empty-cover {
+  color: #536d59;
+  background: linear-gradient(140deg, #f0f2e8, #e5eadf);
+}
+
+.samuhik-card-body h3 {
+  color: #20533d;
+}
+
+.samuhik-event-date {
+  color: #718076;
+}
+
+.samuhik-card-footer {
+  border-top-color: #e4e5d9;
+  color: #718076;
+}
+
+.samuhik-view-link {
+  color: #20533d;
+}
+
+.samuhik-event-card:hover .samuhik-view-link {
+  color: #8a6b08;
+}
+
+/* Photo gallery */
+.samuhik-photo-card {
+  border: 1px solid #e4e5d9;
+}
+
+.samuhik-photo-overlay {
+  background: linear-gradient(
+    transparent,
+    rgba(21, 59, 45, 0.82)
+  );
+}
+
+/* Empty gallery message */
+.samuhik-no-photos {
+  color: #718076;
+  background: #fffefa;
+  border-color: #d4ddce;
+}
+
+.samuhik-no-photos h3 {
+  color: #20533d;
+}
+
+/* Footer */
+.samuhik-footer {
+  background: #fffefa;
+  border-top-color: #e4e5d9;
+}
+
+.samuhik-footer p {
+  color: #20533d;
+}
+
+.samuhik-footer span {
+  color: #718076;
+}
+
+/* Keyboard accessibility */
+.samuhik-page a:focus-visible,
+.samuhik-page button:focus-visible {
+  outline: 3px solid #d4a91b;
+  outline-offset: 4px;
+}
