@@ -2319,3 +2319,64 @@ textarea {
     transform: none !important;
   }
 }
+
+
+
+/* Desktop navbar layout fix */
+@media (min-width: 781px) {
+  .site-header {
+    min-height: 78px;
+    padding: 12px 3%;
+    gap: 18px;
+    align-items: center;
+  }
+
+  .brand-stack {
+    flex: 0 1 285px;
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .brand {
+    max-width: 100%;
+  }
+
+  .brand-name strong {
+    font-size: 12px;
+  }
+
+  .brand-name small {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  .header-action-buttons {
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
+
+  .header-donate-button,
+  .header-join-button {
+    padding: 9px 10px;
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  .nav-menu {
+    flex: 1 1 auto;
+    min-width: 0;
+    justify-content: flex-end;
+    gap: 12px;
+    font-size: 10px;
+  }
+
+  .nav-menu > a:not(.donate-button) {
+    white-space: nowrap;
+    padding: 10px 0;
+  }
+
+  .nav-menu .donate-button {
+    padding: 10px 12px;
+    white-space: nowrap;
+  }
+}
