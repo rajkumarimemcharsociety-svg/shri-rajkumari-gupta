@@ -79,7 +79,7 @@ const publicDocuments = [
     title: "Registration Certificate — Image Copy",
     category: "Legal Registration",
     description: "Image copy of the society registration certificate.",
-    file: "/documents/REGISTRATION%20CERTIFICATE.jpg",
+    file: "/documents/REGISTRATION%20CERTIFICATE.jpeg",
     type: "Image",
   },
   {
@@ -93,14 +93,14 @@ const publicDocuments = [
     title: "Section 80G Document — Part 1",
     category: "Tax & Compliance",
     description: "First supplied Section 80G document.",
-    file: "/documents/Exemptions%20under%2080(G)%20Income%20tax%201.pdf",
+    file: "/documents/Exemptions%20under%2080(G)%20Income%20tax%201%20.pdf",
     type: "PDF",
   },
   {
     title: "Section 80G Document — Part 2",
     category: "Tax & Compliance",
     description: "Second supplied Section 80G document.",
-    file: "/documents/Exemptions%20under%2080(G)%20Income%20tax%202.pdf",
+    file: "/documents/Exemptions%20under%2080(G)%20Income%20tax%202%20.pdf",
     type: "PDF",
   },
   {
