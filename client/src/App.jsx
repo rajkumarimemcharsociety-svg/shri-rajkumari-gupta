@@ -28,6 +28,12 @@ import EnquiryForm from "./components/EnquiryForm";
 import JoinSocietyPage from "./pages/JoinSocietyPage";
 import DonationSection from "./components/DonationSection";
 import DonationPage from "./pages/DonationPage";
+import AdminLogin from "./admin/AdminLogin";
+import AdminDashboard from "./admin/AdminDashboard";
+import AdminEnquiries from "./admin/AdminEnquiries";
+import AdminReports from "./admin/AdminReports";
+import ReportsPage from "./ReportsPage";
+import PrivateDocuments from "./admin/PrivateDocuments";
 
 import "./App.css";
 
@@ -362,11 +368,25 @@ function HomePage() {
           aria-label="Main navigation"
         >
           <a href="#home" onClick={closeMenu}>Home</a>
-          <a href="#about" onClick={closeMenu}>Our Story</a>
-          <a href="#our-works" onClick={closeMenu}>Our Work</a>
-          <a href="#impact" onClick={closeMenu}>Our Impact</a>
-          <a href="#transparency" onClick={closeMenu}>Transparency</a>
-          <a href="#contact" onClick={closeMenu}>Contact</a>
+<a href="#about" onClick={closeMenu}>Our Story</a>
+<a href="#mission-vision" onClick={closeMenu}>
+  Mission &amp; Vision
+</a>
+<a href="#our-works" onClick={closeMenu}>Our Work</a>
+          
+<a href="#impact" onClick={closeMenu}>Our Impact</a>
+<a href="#transparency" onClick={closeMenu}>Transparency</a>
+<Link to="/reports" onClick={closeMenu}>Reports &amp; Publications</Link>
+<a href="#contact" onClick={closeMenu}>Contact</a>
+
+          <Link
+  className="admin-nav-link"
+  to="/admin/login"
+  onClick={closeMenu}
+>
+  
+  <ShieldCheck size={15} /> Admin Login
+</Link>
 
           <Link className="donate-button" to="/donate" onClick={closeMenu}>
             <Heart size={15} /> Donate
@@ -522,6 +542,76 @@ function HomePage() {
             </div>
           </div>
         </section>
+
+        
+        {/* MISSION AND VISION */}
+        <section
+          className="mission-vision-section"
+          id="mission-vision"
+          aria-labelledby="mission-vision-title"
+        >
+          <div className="mission-vision-heading">
+            <span className="eyebrow">OUR PURPOSE</span>
+            <h2 id="mission-vision-title">Our Mission &amp; Vision</h2>
+            <p>
+              Every meaningful change begins with compassion, opportunity,
+              and the belief that every person deserves a brighter future.
+            </p>
+          </div>
+
+          <div className="mission-vision-grid">
+            <article className="mission-vision-card">
+              <div className="mission-vision-icon">
+                <BookOpen size={25} />
+              </div>
+
+              <span className="mission-vision-label">WHAT WE DO</span>
+              <h3>Our Mission</h3>
+
+              <p>
+                Our mission is to make education, opportunity, and dignity
+                accessible to every person, regardless of their financial
+                background. We believe every child deserves the chance to
+                learn, grow, and build a brighter future.
+              </p>
+
+              <p>
+                We work to support children through educational guidance
+                and learning opportunities, empower women through skill
+                development, and encourage families through meaningful
+                community initiatives. Through compassion, dedication,
+                and collective effort, we strive to bring positive change
+                to the lives of those who need it most.
+              </p>
+            </article>
+
+            <article className="mission-vision-card">
+              <div className="mission-vision-icon">
+                <Target size={25} />
+              </div>
+
+              <span className="mission-vision-label">WHAT WE ASPIRE TO</span>
+              <h3>Our Vision</h3>
+
+              <p>
+                Our vision is a society where every child can dream freely
+                and every woman has the confidence to become self-reliant.
+                We hope to build a future where financial difficulties do
+                not prevent anyone from accessing education or opportunities.
+              </p>
+
+              <p>
+                We believe kindness, equal opportunity, and community support
+                can create lasting change. We want to inspire people to come
+                together, help one another, and build stronger communities.
+                Above all, we aspire to carry forward a legacy of care and
+                service, creating a more hopeful and dignified future for
+                generations to come.
+              </p>
+            </article>
+          </div>
+        </section>
+
 
         {/* COMMUNITY GALLERY */}
         <section className="gallery-section section-wrap" id="gallery">
@@ -755,7 +845,7 @@ function HomePage() {
             <a href="#our-works">Our work</a>
             <a href="#impact">Our journey</a>
             <a href="#transparency">Transparency</a>
-            <a href="#public-documents">Official documents</a>
+                        <a href="#public-documents">Official documents</a>
             <a href="#donate">Support Us</a>
           </div>
 
@@ -766,6 +856,7 @@ function HomePage() {
             <Link to="/womens-skill-training">Women's training</Link>
             <Link to="/blood-donation-camp">Blood donation camp</Link>
             <Link to="/join-society">Join our society</Link>
+            
           </div>
 
           <div className="footer-column footer-contact">
@@ -798,6 +889,15 @@ export default function App() {
       <Route path="/blood-donation-camp" element={<BloodDonationPage />} />
       <Route path="/donate" element={<DonationPage />} />
       <Route path="/join-society" element={<JoinSocietyPage />} />
+      <Route path="/admin/login" element={<AdminLogin />} />
+<Route path="/admin" element={<AdminDashboard />} />
+<Route path="/admin/enquiries" element={<AdminEnquiries />} />
+<Route path="/admin/reports" element={<AdminReports />} />
+<Route path="/reports" element={<ReportsPage />} />
+<Route
+  path="/admin/private-documents"
+  element={<PrivateDocuments />}
+/>
 
       <Route
         path="*"

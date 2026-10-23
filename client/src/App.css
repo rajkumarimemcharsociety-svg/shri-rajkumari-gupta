@@ -2380,3 +2380,140 @@ textarea {
     white-space: nowrap;
   }
 }
+
+
+
+
+/* Mission and Vision section */
+.mission-vision-section {
+  padding: 76px 7%;
+  background: #f4f8ff;
+  scroll-margin-top: 24px;
+}
+
+.mission-vision-heading {
+  max-width: 740px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.mission-vision-heading .eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #1759a6;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.mission-vision-heading h2 {
+  margin: 0 0 14px;
+  color: #17365d;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.2;
+}
+
+.mission-vision-heading > p {
+  margin: 0;
+  color: #58677c;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.mission-vision-card {
+  padding: 32px;
+  background: #ffffff;
+  border: 1px solid #dce7f5;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(23, 54, 93, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mission-vision-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(23, 54, 93, 0.1);
+}
+
+.mission-vision-icon {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+  color: #1759a6;
+  background: #e8f1ff;
+  border-radius: 15px;
+}
+
+.mission-vision-label {
+  color: #1759a6;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.mission-vision-card h3 {
+  margin: 10px 0 16px;
+  color: #17365d;
+  font-size: 25px;
+}
+
+.mission-vision-card p {
+  margin: 0 0 14px;
+  color: #536174;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.mission-vision-card p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 780px) {
+  .mission-vision-section {
+    padding: 54px 5%;
+  }
+
+  .mission-vision-heading {
+    margin-bottom: 28px;
+  }
+
+  .mission-vision-heading > p {
+    font-size: 14px;
+  }
+
+  .mission-vision-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .mission-vision-card {
+    padding: 24px;
+  }
+
+  .mission-vision-card h3 {
+    font-size: 22px;
+  }
+
+  .mission-vision-card p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mission-vision-card {
+    transition: none;
+  }
+
+  .mission-vision-card:hover {
+    transform: none;
+  }
+}

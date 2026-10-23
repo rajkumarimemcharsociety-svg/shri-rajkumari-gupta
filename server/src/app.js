@@ -6,6 +6,10 @@ import rateLimit from "express-rate-limit";
 import nodemailer from "nodemailer";
 import mongoose from "mongoose";
 import Enquiry from "./models/Enquiry.js";
+import adminRoutes from "./routes/adminRoutes.js";
+import reportRoutes from "./routes/reportRoutes.js";
+import privateDocumentRoutes from "./routes/privateDocumentRoutes.js";
+
 
 const app = express();
 
@@ -18,6 +22,9 @@ app.use(
 );
 
 app.use(express.json({ limit: "20kb" }));
+app.use("/api/admin", adminRoutes);
+app.use("/api/reports", reportRoutes);
+app.use("/api/private-documents", privateDocumentRoutes);
 
 app.use(
   "/api",
