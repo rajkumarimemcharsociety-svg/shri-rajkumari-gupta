@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import {
   ShieldCheck,
   LogOut,
+  Heart,
   RefreshCw,
   Inbox,
   Clock3,
@@ -262,6 +263,16 @@ export default function AdminDashboard() {
           <FileText size={16} />
           Reports &amp; Documents
         </Link>
+
+        
+<Link
+  to="/admin/donations"
+  className="admin-back-link admin-enquiries-nav-link"
+>
+  <Heart size={16} />
+  Demo Donations
+</Link>
+
 
         <div className="admin-dashboard-title-row">
           <div>

@@ -34,6 +34,7 @@ import AdminEnquiries from "./admin/AdminEnquiries";
 import AdminReports from "./admin/AdminReports";
 import ReportsPage from "./ReportsPage";
 import PrivateDocuments from "./admin/PrivateDocuments";
+import AdminDonations from "./admin/AdminDonations";
 
 import "./App.css";
 
@@ -1011,6 +1012,11 @@ export default function App() {
 <Route
   path="/admin/private-documents"
   element={<PrivateDocuments />}
+/>
+<Route path="/admin/reports" element={<AdminReports />} />
+<Route
+  path="/admin/donations"
+  element={<AdminDonations />}
 />
 
       <Route

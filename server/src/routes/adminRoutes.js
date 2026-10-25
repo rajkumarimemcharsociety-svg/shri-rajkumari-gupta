@@ -5,6 +5,7 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
 import Enquiry from "../models/Enquiry.js";
+import Donation from "../models/Donation.js";
 import requireAdmin from "../middleware/requireAdmin.js";
 
 const router = Router();
@@ -268,5 +269,118 @@ router.delete("/enquiries/:id", requireAdmin, async (req, res) => {
     });
   }
 });
+
+
+/* DEMO DONATIONS — NOT REAL PAYMENT RECORDS */
+
+// GET demo donation records
+router.get("/donations", requireAdmin, async (req, res) => {
+  try {
+    if (mongoose.connection.readyState !== 1) {
+      return res.status(503).json({
+        success: false,
+        message: "Database is temporarily unavailable.",
+      });
+    }
+
+    const donations = await Donation.find({ mode: "demo" })
+      .sort({ createdAt: -1 })
+      .limit(200)
+      .lean();
+
+    const totals = {
+      count: donations.length,
+      demoSuccess: donations.filter(
+        (item) => item.status === "demo-success"
+      ).length,
+      demoPending: donations.filter(
+        (item) => item.status === "demo-pending"
+      ).length,
+      demoFailed: donations.filter(
+        (item) => item.status === "demo-failed"
+      ).length,
+      demoAmount: donations
+        .filter((item) => item.status === "demo-success")
+        .reduce((sum, item) => sum + item.amount, 0),
+    };
+
+    return res.json({
+      success: true,
+      disclaimer: "All records are simulated demo transactions, not real donations.",
+      totals,
+      donations,
+    });
+  } catch (error) {
+    console.error("Loading demo donations failed:", error.message);
+
+    return res.status(500).json({
+      success: false,
+      message: "Unable to load demo donation records.",
+    });
+  }
+});
+
+// CREATE a simulated demo transaction
+router.post("/donations/demo", requireAdmin, async (req, res) => {
+  try {
+    if (mongoose.connection.readyState !== 1) {
+      return res.status(503).json({
+        success: false,
+        message: "Database is temporarily unavailable.",
+      });
+    }
+
+    const donorName =
+      typeof req.body?.donorName === "string"
+        ? req.body.donorName.trim()
+        : "Demo Donor";
+
+    const amount = req.body?.amount;
+    const allowedStatuses = [
+      "demo-success",
+      "demo-pending",
+      "demo-failed",
+    ];
+    const status = req.body?.status || "demo-pending";
+
+    if (
+      donorName.length > 100 ||
+      typeof amount !== "number" ||
+      !Number.isFinite(amount) ||
+      amount < 1 ||
+      amount > 10000000 ||
+      !allowedStatuses.includes(status)
+    ) {
+      return res.status(400).json({
+        success: false,
+        message: "Enter a valid demo name, amount, and status.",
+      });
+    }
+
+    const { randomUUID } = await import("node:crypto");
+
+    const donation = await Donation.create({
+      donorName: donorName || "Demo Donor",
+      amount,
+      status,
+      reference: `DEMO-${randomUUID()}`,
+      mode: "demo",
+    });
+
+    return res.status(201).json({
+      success: true,
+      message: "Demo transaction created. No payment was made or received.",
+      donation,
+    });
+  } catch (error) {
+    console.error("Creating demo donation failed:", error.message);
+
+    return res.status(500).json({
+      success: false,
+      message: "Unable to create demo transaction.",
+    });
+  }
+});
+
 
 export default router;
