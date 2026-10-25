@@ -484,11 +484,26 @@ function HomePage() {
 
         {/* ABOUT THE SOCIETY */}
         <section className="about-band" id="about">
-          <div className="about-inner">
-            <div className="about-photo-wrap">
+          <div
+            className="about-inner"
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              alignItems: "center",
+              gap: "32px",
+            }}
+          >
+            <div
+              className="about-photo-wrap"
+              style={{
+                flex: "1 1 260px",
+                minWidth: 0,
+                maxWidth: "100%",
+              }}
+            >
               <img
                 src="/images/scholarship/S (3).jpeg"
-                alt="A person reading a book"
+                alt="A classroom activity supported by the society"
                 loading="lazy"
               />
 
@@ -497,25 +512,34 @@ function HomePage() {
               </span>
             </div>
 
-            <div className="about-copy">
+            <div
+              className="about-copy"
+              style={{
+                flex: "2 1 320px",
+                minWidth: 0,
+              }}
+            >
               <span className="eyebrow">OUR STORY</span>
-              <h2>Carrying forward a spirit of service.</h2>
-
+              <h2>FORMATION OF THE SOCIETY</h2>
               <p>
-                Smt. Raj Kumari Gupta is remembered by her family as a
-                compassionate and philanthropic person. After her
-                passing in 1992, family members sought to continue
-                that spirit of social responsibility. The society's
-                work grew from this commitment to helping people in
-                need.
+                The Society was inspired by the life and values of Smt. Raj
+                Kumari Gupta. Her family turned that spirit of compassion into
+                charitable work, which grew into a community initiative to
+                support girls from underprivileged families through Samuhik
+                Vivah.
               </p>
-
               <a className="button button-green" href="#history">
-                Read our story <ArrowRight size={16} />
+                Read our journey <ArrowRight size={16} />
               </a>
             </div>
 
-            <div className="values-list">
+            <div
+              className="values-list"
+              style={{
+                flex: "1 1 220px",
+                minWidth: 0,
+              }}
+            >
               <article>
                 <span><BookOpen size={20} /></span>
                 <div>
@@ -540,11 +564,101 @@ function HomePage() {
                 </div>
               </article>
             </div>
+
+            <div
+              className="formation-story-full"
+              style={{
+                flex: "1 1 100%",
+                width: "100%",
+                minWidth: 0,
+                boxSizing: "border-box",
+                marginTop: "8px",
+                padding: "clamp(22px, 4vw, 40px)",
+                background: "#ffffff",
+                border: "1px solid #dce7f5",
+                borderRadius: "18px",
+                boxShadow: "0 10px 30px rgba(23, 54, 93, 0.06)",
+              }}
+            >
+              <span
+                className="eyebrow"
+                style={{ display: "inline-block", marginBottom: "10px" }}
+              >
+                THE STORY BEHIND OUR BEGINNINGS
+              </span>
+              <h2
+                style={{
+                  margin: "0 0 22px",
+                  color: "#17365d",
+                  fontSize: "clamp(24px, 3vw, 34px)",
+                  lineHeight: 1.25,
+                }}
+              >
+                From a family’s remembrance to a community initiative
+              </h2>
+
+              <div
+                style={{
+                  width: "100%",
+                  maxWidth: "none",
+                  color: "#536174",
+                  fontSize: "16px",
+                  lineHeight: 1.9,
+                }}
+              >
+                <p style={{ margin: "0 0 16px" }}>
+                  Smt. Raj Kumari Gupta was a pious, helpful, socially minded
+                  and philanthropic woman. She was sensitive to the needs of
+                  society and became the inspiration and guiding spirit behind
+                  the concept of the Society. She passed away in 1992. After
+                  her death, her family started a society in her memory to
+                  continue her concern for society and her spirit of service.
+                </p>
+
+                <p style={{ margin: "0 0 16px" }}>
+                  Initially, the family supported people through scholarship
+                  donations and other charitable contributions. These early
+                  efforts were limited in duration and could not all continue
+                  because of the family’s economic circumstances. Originally,
+                  her husband and all four of her sons were members of the
+                  Society because of their relationship with Smt. Raj Kumari
+                  Gupta.
+                </p>
+
+                <p style={{ margin: "0 0 16px" }}>
+                  A new chapter began during the marriage of Aastha. Arun
+                  requested guests to share their good wishes rather than
+                  give gifts in cash or kind. The guests respected this wish,
+                  although some close relatives gave cash because of their
+                  personal sentiments. It was decided that the money collected
+                  would be used to support marriages for girls from
+                  underprivileged families by organising a simple Samuhik
+                  Vivah.
+                </p>
+
+                <p style={{ margin: "0 0 16px" }}>
+                  The first such initiative took place on 2 December 2012.
+                  This was a new concept in the area, and members of the
+                  community expressed their willingness to participate in
+                  this social cause. Interested members were subsequently
+                  inducted into the Society, helping it develop beyond the
+                  original family membership.
+                </p>
+
+                <p style={{ margin: 0 }}>
+                  The Society later pursued formal registration so that its
+                  charitable work could continue in an organised way. The
+                  registration and tax-related details should be read from
+                  the Society’s official certificates and governing documents
+                  published in the Transparency &amp; Official Documents
+                  section of this website.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
-        
-        {/* MISSION AND VISION */}
+                {/* MISSION AND VISION */}
         <section
           className="mission-vision-section"
           id="mission-vision"
