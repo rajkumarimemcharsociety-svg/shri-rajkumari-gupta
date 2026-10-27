@@ -2630,3 +2630,45 @@ textarea {
     flex: initial;
   }
 }
+
+
+
+/* Keep all four programme cards visible and flip them on page load */
+.hero-works-grid-flipping {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  perspective: 1000px;
+}
+
+.hero-work-card-flip {
+  animation: programmeCardFlipIn 900ms ease-out both;
+  animation-delay: var(--card-flip-delay, 0ms);
+  transform-origin: center;
+  backface-visibility: visible;
+}
+
+@keyframes programmeCardFlipIn {
+  from {
+    opacity: 0;
+    transform: rotateY(90deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-works-grid-flipping {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-work-card-flip {
+    animation: none;
+  }
+}

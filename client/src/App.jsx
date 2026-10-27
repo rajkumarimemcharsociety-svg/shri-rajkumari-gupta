@@ -34,7 +34,6 @@ import AdminEnquiries from "./admin/AdminEnquiries";
 import AdminReports from "./admin/AdminReports";
 import ReportsPage from "./ReportsPage";
 import PrivateDocuments from "./admin/PrivateDocuments";
-import AdminDonations from "./admin/AdminDonations";
 
 import "./App.css";
 
@@ -275,6 +274,7 @@ function HomePage() {
     return () => clearInterval(interval);
   }, [heroSlides.length]);
 
+
   useEffect(() => {
     const elements = document.querySelectorAll(
       ".section-wrap, .about-band, .impact-band, " +
@@ -335,7 +335,7 @@ function HomePage() {
 
             <span className="brand-name">
               <strong>SHRI RAJKUMARI GUPTA</strong>
-              <small>EDUCATION &amp; SOCIAL WELFARE</small>
+              <large>Memorial &amp; Charitable Society</large>
             </span>
           </a>
 
@@ -373,7 +373,7 @@ function HomePage() {
 <a href="#mission-vision" onClick={closeMenu}>
   Mission &amp; Vision
 </a>
-<a href="#our-works" onClick={closeMenu}>Our Work</a>
+<a href="#our-works" onClick={closeMenu}>Our Projects</a>
           
 <a href="#impact" onClick={closeMenu}>Our Impact</a>
 <a href="#transparency" onClick={closeMenu}>Transparency</a>
@@ -451,12 +451,13 @@ function HomePage() {
           <div className="hero-works" id="our-works">
             <span className="hero-works-heading">HOW WE HELP</span>
 
-            <div className="hero-works-grid">
-              {works.map(({ title, description, icon: Icon, link, linkText }) => (
+            <div className="hero-works-grid hero-works-grid-flipping">
+              {works.map(({ title, description, icon: Icon, link, linkText }, index) => (
                 <Link
                   to={link}
-                  className="hero-work-card hero-work-card-link"
+                  className="hero-work-card hero-work-card-link hero-work-card-flip"
                   key={title}
+                  style={{ "--card-flip-delay": `${index * 180}ms` }}
                   aria-label={`Explore ${title}`}
                 >
                   <span className="hero-work-icon">
@@ -1012,11 +1013,6 @@ export default function App() {
 <Route
   path="/admin/private-documents"
   element={<PrivateDocuments />}
-/>
-<Route path="/admin/reports" element={<AdminReports />} />
-<Route
-  path="/admin/donations"
-  element={<AdminDonations />}
 />
 
       <Route
