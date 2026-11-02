@@ -243,7 +243,9 @@ function PublicDocuments() {
 
 function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
   const [projectsOpen, setProjectsOpen] = useState(false);
+  const [eventsOpen, setEventsOpen] = useState(false);
   const [activeHeroSlide, setActiveHeroSlide] = useState(0);
 
   const heroSlides = [
@@ -317,7 +319,9 @@ function HomePage() {
 
   const closeMenu = () => {
     setMenuOpen(false);
+    setAboutOpen(false);
     setProjectsOpen(false);
+    setEventsOpen(false);
   };
 
   return (
@@ -344,13 +348,13 @@ function HomePage() {
           </a>
 
           <div className="header-action-buttons">
-            <Link className="header-donate-button" to="/donate">
+            <Link className="header-donate-button" to="/donate" onClick={closeMenu}>
               <Heart size={17} />
               Donate to Our Mission
               <ArrowRight size={17} />
             </Link>
 
-            <Link className="header-join-button" to="/join-society">
+            <Link className="header-join-button" to="/join-society" onClick={closeMenu}>
               <Users size={17} />
               Join Our Society
               <ArrowRight size={16} />
@@ -373,46 +377,45 @@ function HomePage() {
           aria-label="Main navigation"
         >
           <a href="#home" onClick={closeMenu}>Home</a>
-<a href="#about" onClick={closeMenu}>Our Story</a>
-<a href="#mission-vision" onClick={closeMenu}>
-  Mission &amp; Vision
-</a>
-<div className={`projects-nav-item ${projectsOpen ? "projects-nav-open" : ""}`}>
-  <button
-    type="button"
-    className="projects-nav-trigger"
-    aria-expanded={projectsOpen}
-    aria-haspopup="true"
-    onClick={() => setProjectsOpen((open) => !open)}
-  >
-    Projects <span className="projects-nav-chevron">▾</span>
-  </button>
-  <div className="projects-dropdown">
-    {works.map((work) => (
-      <Link key={work.link} to={work.link} onClick={closeMenu}>
-        {work.title}
-      </Link>
-    ))}
-  </div>
-</div>
-          
-<a href="#impact" onClick={closeMenu}>Our Impact</a>
-<a href="#transparency" onClick={closeMenu}>Transparency</a>
-<Link to="/reports" onClick={closeMenu}>Reports &amp; Publications</Link>
-<a href="#contact" onClick={closeMenu}>Contact</a>
 
-          <Link
-  className="admin-nav-link"
-  to="/admin/login"
-  onClick={closeMenu}
->
-  
-  <ShieldCheck size={15} /> Admin Login
-</Link>
+          <div className={`projects-nav-item ${aboutOpen ? "projects-nav-open" : ""}`}>
+            <button type="button" className="projects-nav-trigger" aria-expanded={aboutOpen}
+              onClick={() => setAboutOpen((open) => !open)}>
+              About us <span className="projects-nav-chevron">▾</span>
+            </button>
+            <div className="projects-dropdown">
+              <a href="#about" onClick={closeMenu}>About society</a>
+              <a href="#about" onClick={closeMenu}>Executive Committee</a>
+              <a href="#about" onClick={closeMenu}>Members</a>
+            </div>
+          </div>
 
-          <Link className="donate-button" to="/donate" onClick={closeMenu}>
-            <Heart size={15} /> Donate
-          </Link>
+          <div className={`projects-nav-item ${projectsOpen ? "projects-nav-open" : ""}`}>
+            <button type="button" className="projects-nav-trigger" aria-expanded={projectsOpen}
+              onClick={() => setProjectsOpen((open) => !open)}>
+              Projects <span className="projects-nav-chevron">▾</span>
+            </button>
+            <div className="projects-dropdown">
+              {works.map((work) => (
+                <Link key={work.link} to={work.link} onClick={closeMenu}>{work.title}</Link>
+              ))}
+            </div>
+          </div>
+
+          <div className={`projects-nav-item ${eventsOpen ? "projects-nav-open" : ""}`}>
+            <button type="button" className="projects-nav-trigger" aria-expanded={eventsOpen}
+              onClick={() => setEventsOpen((open) => !open)}>
+              News &amp; Events <span className="projects-nav-chevron">▾</span>
+            </button>
+            <div className="projects-dropdown">
+              <a href="#news" onClick={closeMenu}>Upcoming Events</a>
+              <a href="#gallery" onClick={closeMenu}>Previous Events</a>
+            </div>
+          </div>
+
+          <a href="#gallery" onClick={closeMenu}>Gallery</a>
+          <a href="#donation" onClick={closeMenu}>Donation</a>
+          <a href="#contact" onClick={closeMenu}>Contact</a>
         </nav>
       </header>
 
@@ -431,7 +434,7 @@ function HomePage() {
 
           <div className="hero-shade" />
 
-          <div className="hero-inner hero-inner-left">
+          <div className="hero-inner">
             <span className="hero-kicker">
               <span /> EDUCATION • OPPORTUNITY • DIGNITY
             </span>
@@ -902,7 +905,7 @@ function HomePage() {
         </section>
 
         {/* DONATION SECTION */}
-        <DonationSection />
+        <div id="donation"><DonationSection /></div>
 
         {/* CONTACT AND ENQUIRY FORM */}
         <section className="contact-cta" id="contact">
