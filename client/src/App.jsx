@@ -243,6 +243,7 @@ function PublicDocuments() {
 
 function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [projectsOpen, setProjectsOpen] = useState(false);
   const [activeHeroSlide, setActiveHeroSlide] = useState(0);
 
   const heroSlides = [
@@ -314,7 +315,10 @@ function HomePage() {
     return () => observer.disconnect();
   }, []);
 
-  const closeMenu = () => setMenuOpen(false);
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setProjectsOpen(false);
+  };
 
   return (
     <div className="ngo-site" id="home">
@@ -373,7 +377,24 @@ function HomePage() {
 <a href="#mission-vision" onClick={closeMenu}>
   Mission &amp; Vision
 </a>
-<a href="#our-works" onClick={closeMenu}>Our Projects</a>
+<div className={`projects-nav-item ${projectsOpen ? "projects-nav-open" : ""}`}>
+  <button
+    type="button"
+    className="projects-nav-trigger"
+    aria-expanded={projectsOpen}
+    aria-haspopup="true"
+    onClick={() => setProjectsOpen((open) => !open)}
+  >
+    Projects <span className="projects-nav-chevron">▾</span>
+  </button>
+  <div className="projects-dropdown">
+    {works.map((work) => (
+      <Link key={work.link} to={work.link} onClick={closeMenu}>
+        {work.title}
+      </Link>
+    ))}
+  </div>
+</div>
           
 <a href="#impact" onClick={closeMenu}>Our Impact</a>
 <a href="#transparency" onClick={closeMenu}>Transparency</a>
@@ -410,7 +431,7 @@ function HomePage() {
 
           <div className="hero-shade" />
 
-          <div className="hero-inner">
+          <div className="hero-inner hero-inner-left">
             <span className="hero-kicker">
               <span /> EDUCATION • OPPORTUNITY • DIGNITY
             </span>
@@ -443,36 +464,9 @@ function HomePage() {
               </a>
             </div>
 
-            <a className="button button-yellow" href="#our-works">
-              Explore Our Work <ArrowRight size={17} />
-            </a>
-          </div>
-
-          <div className="hero-works" id="our-works">
-            <span className="hero-works-heading">HOW WE HELP</span>
-
-            <div className="hero-works-grid hero-works-grid-flipping">
-              {works.map(({ title, description, icon: Icon, link, linkText }, index) => (
-                <Link
-                  to={link}
-                  className="hero-work-card hero-work-card-link hero-work-card-flip"
-                  key={title}
-                  style={{ "--card-flip-delay": `${index * 180}ms` }}
-                  aria-label={`Explore ${title}`}
-                >
-                  <span className="hero-work-icon">
-                    <Icon size={23} />
-                  </span>
-
-                  <h2>{title}</h2>
-                  <p>{description}</p>
-
-                  <span className="hero-work-link">
-                    {linkText} <ArrowRight size={14} />
-                  </span>
-                </Link>
-              ))}
-            </div>
+            <Link className="button button-yellow" to="/scholarships">
+              Explore Our Projects <ArrowRight size={17} />
+            </Link>
           </div>
 
           <div className="hero-caption">

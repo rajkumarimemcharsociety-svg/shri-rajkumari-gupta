@@ -2672,3 +2672,311 @@ textarea {
     animation: none;
   }
 }
+
+
+
+/* Projects dropdown in the main navigation */
+.projects-nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.projects-nav-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 0;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.projects-nav-trigger:hover,
+.projects-nav-open .projects-nav-trigger {
+  border-bottom-color: #2674b8;
+}
+
+.projects-nav-chevron {
+  font-size: 12px;
+  transition: transform 0.2s ease;
+}
+
+.projects-nav-open .projects-nav-chevron {
+  transform: rotate(180deg);
+}
+
+.projects-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 1000;
+  display: none;
+  width: 245px;
+  padding: 8px;
+  background: #ffffff;
+  border: 1px solid #dce7f5;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(20, 50, 80, 0.16);
+}
+
+.projects-nav-item:hover .projects-dropdown,
+.projects-nav-item:focus-within .projects-dropdown,
+.projects-nav-open .projects-dropdown {
+  display: block;
+}
+
+.projects-dropdown a {
+  display: block;
+  padding: 12px;
+  color: #17365d;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 7px;
+}
+
+.projects-dropdown a:hover {
+  background: #edf5ff;
+  color: #1759a6;
+}
+
+/* Mobile navigation */
+@media (max-width: 780px) {
+  .projects-nav-item {
+    display: block;
+    width: 100%;
+  }
+
+  .projects-nav-trigger {
+    width: 100%;
+    justify-content: space-between;
+    padding: 13px 0;
+    border-bottom: 1px solid #e0eaf4;
+    text-align: left;
+  }
+
+  .projects-dropdown {
+    position: static;
+    width: 100%;
+    margin: 0 0 8px;
+    padding: 5px 8px;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: none;
+    background: #f2f7fd;
+  }
+
+  .projects-dropdown a {
+    padding: 11px 12px;
+  }
+}
+
+
+
+/* HERO: move the text towards the left */
+.hero-inner-left {
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: auto;
+  padding-left: 5%;
+  padding-right: 5%;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.hero-inner-left .hero-kicker,
+.hero-inner-left h1,
+.hero-inner-left > p {
+  text-align: left;
+}
+
+.hero-inner-left h1 {
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: 1.08;
+  max-width: 750px;
+}
+
+.hero-inner-left > p {
+  max-width: 650px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.hero-inner-left .hero-action-buttons {
+  justify-content: flex-start;
+}
+
+/* NAVBAR: increase link and button sizes */
+@media (min-width: 781px) {
+  .site-header {
+    gap: 24px;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  .nav-menu {
+    gap: 18px;
+    font-size: 13px;
+  }
+
+  .nav-menu > a:not(.donate-button) {
+    font-size: 13px;
+    padding: 12px 0;
+  }
+
+  .projects-nav-trigger {
+    font-size: 13px;
+    padding: 12px 0;
+  }
+
+  .nav-menu .donate-button {
+    padding: 12px 18px;
+    font-size: 13px;
+  }
+
+  .header-donate-button,
+  .header-join-button {
+    padding: 12px 15px;
+    font-size: 12px;
+    gap: 9px;
+  }
+
+  .header-action-buttons {
+    gap: 10px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 780px) {
+  .hero-inner-left {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .hero-inner-left h1 {
+    font-size: clamp(34px, 9vw, 48px);
+  }
+
+  .hero-inner-left > p {
+    font-size: 14px;
+  }
+
+  .nav-menu > a:not(.donate-button),
+  .projects-nav-trigger {
+    font-size: 15px;
+  }
+}
+
+
+/* ==================================================
+   FINAL OVERRIDE: HERO LEFT ALIGNMENT + BIGGER NAVBAR
+   ================================================== */
+
+/* Move the hero content towards the left edge */
+.hero-banner {
+  display: block !important;
+  padding: 65px 3% 90px !important;
+  min-height: 650px;
+}
+
+.hero-banner .hero-inner.hero-inner-left {
+  display: block !important;
+  width: min(850px, 80%) !important;
+  max-width: 850px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+  justify-self: start !important;
+  align-self: center !important;
+}
+
+.hero-banner .hero-inner-left .hero-kicker {
+  justify-content: flex-start !important;
+  text-align: left !important;
+  font-size: 13px !important;
+}
+
+.hero-banner .hero-inner-left h1 {
+  max-width: 780px !important;
+  text-align: left !important;
+  font-size: clamp(44px, 5.2vw, 70px) !important;
+  line-height: 1.08 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.hero-banner .hero-inner-left > p {
+  max-width: 650px !important;
+  text-align: left !important;
+  font-size: 17px !important;
+  line-height: 1.85 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.hero-banner .hero-inner-left .hero-action-buttons {
+  justify-content: flex-start !important;
+}
+
+/* Increase desktop navigation link sizes */
+@media (min-width: 781px) {
+  .site-header {
+    padding-left: 3% !important;
+    padding-right: 3% !important;
+    gap: 20px !important;
+  }
+
+  .nav-menu {
+    gap: 17px !important;
+    font-size: 13px !important;
+  }
+
+  .nav-menu > a,
+  .nav-menu > a:not(.donate-button),
+  .nav-menu .projects-nav-trigger {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+  }
+
+  .nav-menu .donate-button {
+    padding: 13px 18px !important;
+    font-size: 13px !important;
+  }
+
+  .header-donate-button,
+  .header-join-button {
+    min-height: 46px !important;
+    padding: 12px 15px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 780px) {
+  .hero-banner {
+    display: block !important;
+    padding: 45px 6% 65px !important;
+    min-height: auto !important;
+  }
+
+  .hero-banner .hero-inner.hero-inner-left {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .hero-banner .hero-inner-left h1 {
+    font-size: clamp(36px, 9vw, 52px) !important;
+  }
+
+  .hero-banner .hero-inner-left > p {
+    font-size: 15px !important;
+  }
+}
