@@ -248,22 +248,22 @@ function HomePage() {
   const [eventsOpen, setEventsOpen] = useState(false);
   const [activeHeroSlide, setActiveHeroSlide] = useState(0);
 
-  const heroSlides = [
+    const heroSlides = [
     {
-      image: "/images/scholarship/S (1).jpeg",
-      alt: "Children learning in a classroom",
+      image: "/images/homepage/hero 1.png",
+      alt: "Society's education and social welfare activities",
     },
     {
-      image: "/images/womens-training/1.jpeg",
-      alt: "A photograph from the society's community initiatives",
+      image: "/images/homepage/hero 2.png",
+      alt: "Society's community support initiatives",
     },
     {
-      image: "/images/womens-training/2.jpeg",
-      alt: "A photograph from the society's programme activities",
+      image: "/images/homepage/hero 3.png",
+      alt: "Society's programmes and activities",
     },
     {
-      image: "/images/womens-training/3.jpeg",
-      alt: "A photograph from a society skills programme",
+      image: "/images/homepage/hero 4.png",
+      alt: "Society's work for education and opportunity",
     },
   ];
 
