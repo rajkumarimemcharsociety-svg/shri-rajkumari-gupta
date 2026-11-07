@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
+import logo from "./assets/logo.png";
 import {
   ArrowRight,
   BookOpen,
@@ -337,15 +338,17 @@ function HomePage() {
       <header className="site-header">
         <div className="brand-stack">
           <a className="brand" href="#home" onClick={closeMenu}>
-            <span className="brand-symbol">
-              <BookOpen size={28} strokeWidth={1.8} />
-            </span>
+  <img
+    src={logo}
+    alt="Shri Rajkumari Gupta Society Logo"
+    className="brand-logo"
+  />
 
-            <span className="brand-name">
-              <strong>SHRI RAJKUMARI GUPTA</strong>
-              <large>Memorial &amp; Charitable Society</large>
-            </span>
-          </a>
+  <span className="brand-name">
+    <strong>SHRI RAJKUMARI GUPTA</strong>
+    <small>Memorial &amp; Charitable Society</small>
+  </span>
+</a>
 
           <div className="header-action-buttons">
             <Link className="header-donate-button" to="/donate" onClick={closeMenu}>
@@ -938,12 +941,17 @@ function HomePage() {
         <div className="footer-top">
           <div className="footer-about">
             <a className="brand footer-brand" href="#home">
-              <span className="brand-symbol"><BookOpen size={25} /></span>
-              <span className="brand-name">
-                <strong>SHRI RAJKUMARI GUPTA</strong>
-                <small>EDUCATION &amp; SOCIAL WELFARE</small>
-              </span>
-            </a>
+  <img
+    src={logo}
+    alt="Shri Rajkumari Gupta Society Logo"
+    className="brand-logo"
+  />
+
+  <span className="brand-name">
+    <strong>SHRI RAJKUMARI GUPTA</strong>
+    <small>EDUCATION &amp; SOCIAL WELFARE</small>
+  </span>
+</a>
 
             <p>
               Continuing a family-inspired commitment to
@@ -973,10 +981,18 @@ function HomePage() {
           </div>
 
           <div className="footer-column footer-contact">
-            <h3>Contact</h3>
-            <p>Official address, phone, and email are to be confirmed.</p>
-            <a href="#contact">Send an enquiry <ArrowRight size={14} /></a>
-          </div>
+  <h3>Contact</h3>
+  <p>Official address, phone, and email are to be confirmed.</p>
+
+  <a href="#contact">
+    Send an enquiry <ArrowRight size={14} />
+  </a>
+
+  <Link to="/admin/login" className="footer-admin-login">
+    <ShieldCheck size={15} />
+    Admin Login
+  </Link>
+</div>
         </div>
 
         <div className="footer-bottom">
